@@ -24,9 +24,11 @@ public class Cooktop : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
+            Debug.Log("yoyo");
         // Vérifie si l'objet en collision a le tag "Pan"
         if (other.CompareTag("pan"))
         {
+            Debug.Log("yoyo");
             // Affiche un message dans la console
             other.transform.position = cookingPos.position;
             other.transform.rotation = cookingPos.rotation;
