@@ -16,7 +16,6 @@ public class CookingFood : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        fumee.Stop(true, ParticleSystemStopBehavior.StopEmitting);
     }
 
     // Update is called once per frame
@@ -33,9 +32,9 @@ public class CookingFood : MonoBehaviour
             {
                 counter = 0;
                 this.transform.GetComponent<Renderer>().material.color = Color.black;
-                //fumee.SetActive(true);
-                fumee.transform.position = this.transform.position;
+
                 fumee.Play();
+                fumee.transform.position = this.transform.position;
             }
         }
     }
