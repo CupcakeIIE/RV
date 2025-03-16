@@ -69,10 +69,10 @@ public class Cooktop : MonoBehaviour
         if (isOn){
             goRenderer.material = offMaterial;
             isOn = false;
+            panOnFire = false;
         } else {
             goRenderer.material = onMaterial;
             isOn = true;
-            panOnFire = false;
         }
     }
 }
