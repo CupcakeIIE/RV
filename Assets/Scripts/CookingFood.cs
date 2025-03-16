@@ -30,7 +30,7 @@ public class CookingFood : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (plaque1.GetComponent<Cooktop>().panOnFire || plaque2.GetComponent<Cooktop>().panOnFire || plaque3.GetComponent<Cooktop>().panOnFire)
+        if ((plaque1.GetComponent<Cooktop>().panOnFire && plaque1.GetComponent<Cooktop>().isOn) || (plaque2.GetComponent<Cooktop>().panOnFire && plaque2.GetComponent<Cooktop>().isOn) || (plaque3.GetComponent<Cooktop>().panOnFire && plaque3.GetComponent<Cooktop>().isOn))
         {
             if (counting)
             {

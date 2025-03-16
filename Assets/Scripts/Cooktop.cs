@@ -30,10 +30,7 @@ public class Cooktop : MonoBehaviour
         // Vérifie si l'objet en collision a le tag "Pan"
         if (other.CompareTag("pan"))
         {
-            if (isOn)
-            {
-                panOnFire = true;
-            }
+            panOnFire = true;
             
 
             Debug.Log("yoyo");
@@ -69,7 +66,6 @@ public class Cooktop : MonoBehaviour
         if (isOn){
             goRenderer.material = offMaterial;
             isOn = false;
-            panOnFire = false;
         } else {
             goRenderer.material = onMaterial;
             isOn = true;
