@@ -49,6 +49,7 @@ public class CookingFood : MonoBehaviour
         else
         {
             fumee.Pause();
+            fumee.Clear();
         }
     }
 
