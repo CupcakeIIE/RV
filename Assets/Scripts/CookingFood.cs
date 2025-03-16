@@ -46,6 +46,10 @@ public class CookingFood : MonoBehaviour
                 fumee.transform.position = this.transform.position;
             }
         }
+        else
+        {
+            fumee.Pause();
+        }
     }
 
     
@@ -55,6 +59,7 @@ public class CookingFood : MonoBehaviour
         if (other.CompareTag("pan"))
         {
             this.transform.position = other.transform.position;
+            this.transform.position = new Vector3(this.transform.position.x, this.transform.position.y + 0.05f, this.transform.position.z);
             this.transform.rotation = other.transform.rotation;
             rb.constraints = RigidbodyConstraints.FreezeRotationX |RigidbodyConstraints.FreezeRotationY | RigidbodyConstraints.FreezeRotationZ | RigidbodyConstraints.FreezePositionX |RigidbodyConstraints.FreezePositionY | RigidbodyConstraints.FreezePositionZ;
    
