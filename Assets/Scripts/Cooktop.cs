@@ -9,7 +9,7 @@ public class Cooktop : MonoBehaviour
     [SerializeField] Transform cookingPos;
     [SerializeField] Material onMaterial;
     [SerializeField] Material offMaterial;
-    private bool isOn = false;
+    public bool isOn = false;
 
     public bool panOnFire = false;
 
