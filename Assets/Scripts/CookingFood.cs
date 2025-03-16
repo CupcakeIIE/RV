@@ -28,7 +28,7 @@ public class CookingFood : MonoBehaviour
                 counter += 1;
             }
 
-            if (counter >= 1000)
+            if (counter >= 100)
             {
                 counter = 0;
                 this.transform.GetComponent<Renderer>().material.color = Color.black;
