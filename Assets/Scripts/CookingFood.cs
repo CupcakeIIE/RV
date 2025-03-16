@@ -7,8 +7,6 @@ public class CookingFood : MonoBehaviour
     private int counter = 0;
     private bool counting = false;
 
-    private GameObject food;
-
     // Start is called before the first frame update
     void Start()
     {
@@ -26,7 +24,7 @@ public class CookingFood : MonoBehaviour
         if (counter >= 1000)
         {
             counter = 0;
-            food.transform.GetComponent<Renderer>().material.color = Color.black;
+            this.transform.GetComponent<Renderer>().material.color = Color.black;
         }
     }
 
@@ -34,17 +32,16 @@ public class CookingFood : MonoBehaviour
     void OnTriggerEnter(Collider other)
     {
         // Vérifie si l'objet en collision a le tag "Pan"
-        if (other.CompareTag("food"))
+        if (other.CompareTag("pan"))
         {
             counting = true;
-            food = other.gameObject;
         }
     }
     
     void OnTriggerExit(Collider other)
     {
         // Vérifie si l'objet en collision a le tag "Pan"
-        if (other.CompareTag("food"))
+        if (other.CompareTag("pan"))
         {
             counting = false;
         }
