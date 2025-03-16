@@ -10,6 +10,9 @@ public class Cooktop : MonoBehaviour
     [SerializeField] Material onMaterial;
     [SerializeField] Material offMaterial;
     private bool isOn = false;
+
+    public bool panOnFire = false;
+
     void Start()
     {
         goRenderer = GetComponent<Renderer>();
@@ -28,6 +31,8 @@ public class Cooktop : MonoBehaviour
         // Vérifie si l'objet en collision a le tag "Pan"
         if (other.CompareTag("pan"))
         {
+            panOnFire = true;
+
             Debug.Log("yoyo");
             // Affiche un message dans la console
             other.transform.position = cookingPos.position;
@@ -47,6 +52,7 @@ public class Cooktop : MonoBehaviour
         if (other.CompareTag("pan"))
         {
             // Affiche un message dans la console
+            panOnFire = false;
 
             GoOnCooktop cookingScript = other.GetComponent<GoOnCooktop>();
             if (cookingScript != null)
