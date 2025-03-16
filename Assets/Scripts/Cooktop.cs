@@ -27,7 +27,6 @@ public class Cooktop : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-            Debug.Log("yoyo");
         // Vérifie si l'objet en collision a le tag "Pan"
         if (other.CompareTag("pan"))
         {
