@@ -13,9 +13,18 @@ public class CookingFood : MonoBehaviour
 
     public ParticleSystem fumee;
 
+    
+    private Rigidbody rb;
+
     // Start is called before the first frame update
     void Start()
     {
+        
+        // Récupère le composant Rigidbody
+        rb = GetComponent<Rigidbody>();
+
+        // Gèle la rotation sur les axes X et Z
+        rb.constraints = RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationZ;
     }
 
     // Update is called once per frame
@@ -47,6 +56,8 @@ public class CookingFood : MonoBehaviour
         {
             this.transform.position = other.transform.position;
             this.transform.rotation = other.transform.rotation;
+            rb.constraints = RigidbodyConstraints.FreezeRotationX |RigidbodyConstraints.FreezeRotationY | RigidbodyConstraints.FreezeRotationZ | RigidbodyConstraints.FreezePositionX |RigidbodyConstraints.FreezePositionY | RigidbodyConstraints.FreezePositionZ;
+   
             counting = true;
         }
     }
@@ -56,6 +67,9 @@ public class CookingFood : MonoBehaviour
         // Vérifie si l'objet en collision a le tag "Pan"
         if (other.CompareTag("pan"))
         {
+            
+            rb.constraints = RigidbodyConstraints.None;
+            rb.constraints = RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationZ;
             counting = false;
         }
     }
