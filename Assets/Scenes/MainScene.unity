@@ -3196,6 +3196,27 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 980139079}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1001384461 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1091426555612742830, guid: 3f7b77d4f752e814f8b41cc9a3436c6e, type: 3}
+  m_PrefabInstance: {fileID: 1959218282}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1001384466
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1001384461}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83b278be7ef1e1c4f88fa969142e3ed2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  plaque1: {fileID: 1173880000}
+  plaque2: {fileID: 98731958}
+  plaque3: {fileID: 661026183}
+  fumee: {fileID: 2105106006}
 --- !u!1 &1073463687
 GameObject:
   m_ObjectHideFlags: 0
@@ -4207,12 +4228,6 @@ PrefabInstance:
       insertIndex: 2
       addedObject: {fileID: 1262420201}
     - targetCorrespondingSourceObject: {fileID: 6808599801469802662, guid: 714cbdecdcb0a4645891357863b99738, type: 3}
-      insertIndex: 3
-      addedObject: {fileID: 1262420200}
-    - targetCorrespondingSourceObject: {fileID: 6808599801469802662, guid: 714cbdecdcb0a4645891357863b99738, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1262420199}
-    - targetCorrespondingSourceObject: {fileID: 6808599801469802662, guid: 714cbdecdcb0a4645891357863b99738, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1262420198}
     - targetCorrespondingSourceObject: {fileID: 6808599801469802662, guid: 714cbdecdcb0a4645891357863b99738, type: 3}
@@ -4247,7 +4262,7 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -4397,43 +4412,11 @@ Rigidbody:
     m_Bits: 0
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
-  m_UseGravity: 1
+  m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &1262420199
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1262420194}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 83b278be7ef1e1c4f88fa969142e3ed2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  plaque1: {fileID: 1173880000}
-  plaque2: {fileID: 98731958}
-  plaque3: {fileID: 661026183}
-  fumee: {fileID: 2105106006}
---- !u!114 &1262420200
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1262420194}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 83b278be7ef1e1c4f88fa969142e3ed2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  plaque1: {fileID: 1173880000}
-  plaque2: {fileID: 98731958}
-  plaque3: {fileID: 661026183}
-  fumee: {fileID: 2105106006}
 --- !u!114 &1262420201
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5922,7 +5905,10 @@ PrefabInstance:
     m_RemovedGameObjects:
     - {fileID: 4176071779766412566, guid: 3f7b77d4f752e814f8b41cc9a3436c6e, type: 3}
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1091426555612742830, guid: 3f7b77d4f752e814f8b41cc9a3436c6e, type: 3}
+      insertIndex: 2
+      addedObject: {fileID: 1001384466}
   m_SourcePrefab: {fileID: 100100000, guid: 3f7b77d4f752e814f8b41cc9a3436c6e, type: 3}
 --- !u!1 &2000990160
 GameObject:
