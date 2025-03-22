@@ -2643,7 +2643,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6863978089ed4e44f9e6f3c22186f89a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _water: {fileID: 0}
   _waterInPot: {fileID: 0}
 --- !u!114 &785941335
 MonoBehaviour:
@@ -2652,12 +2651,11 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 785941330}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6863978089ed4e44f9e6f3c22186f89a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _water: {fileID: 1472083504}
   _waterInPot: {fileID: 2239998079547315932, guid: bdca948d4efc15a4f8fa1c8b786cf7a1, type: 3}
 --- !u!1001 &895672541
 PrefabInstance:
@@ -4653,7 +4651,7 @@ CapsuleCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
