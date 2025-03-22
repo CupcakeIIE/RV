@@ -17,7 +17,7 @@ public class Water : MonoBehaviour
         if(other.gameObject.TryGetComponent(out Sink sink) && !_isFull)
         {
             GameObject fullWater = Instantiate(_waterInPot, transform);
-            fullWater.transform.SetLocalPositionAndRotation(new Vector3(0f, 0.35f, 0f), Quaternion.identity);
+            fullWater.transform.SetLocalPositionAndRotation(new Vector3(0f, 0.08f, 0f), Quaternion.identity);
             _isFull = true;
         }
     }
