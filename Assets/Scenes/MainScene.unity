@@ -2847,7 +2847,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _water: {fileID: 1472083504}
-  _waterInPot: {fileID: 0}
+  _waterInPot: {fileID: 2239998079547315932, guid: bdca948d4efc15a4f8fa1c8b786cf7a1, type: 3}
 --- !u!1001 &895672541
 PrefabInstance:
   m_ObjectHideFlags: 0
