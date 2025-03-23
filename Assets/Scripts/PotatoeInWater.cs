@@ -12,12 +12,11 @@ public class PotatoeInWater : MonoBehaviour
         _potatoesCooked = 0;
     }
 
-    // Update is called once per frame
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("potatoes") && _potatoesCooked < _maxPotatoes)
+        if(other.TryGetComponent(out CutFood cf) && _potatoesCooked < _maxPotatoes)
         {
-            Destroy(other.gameObject);
+            Destroy(cf.gameObject);
             _potatoesCooked++;
         }
     }
