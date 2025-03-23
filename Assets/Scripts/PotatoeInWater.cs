@@ -15,7 +15,7 @@ public class PotatoeInWater : MonoBehaviour
     // Update is called once per frame
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("potatoes") && _potatoesCooked < _maxPotatoes)
+        if (other.gameObject.CompareTag("potatoes") && _potatoesCooked < _maxPotatoes)
         {
             Destroy(other.gameObject);
             _potatoesCooked++;
