@@ -20,6 +20,5 @@ public class CookingFoodOven : MonoBehaviour
 
     public void Cook(float dt){
         
-        goRenderer.material = material;
     }
 }

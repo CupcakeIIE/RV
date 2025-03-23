@@ -4,12 +4,13 @@ using UnityEngine;
 
 public class OvenOn : MonoBehaviour
 {
-    private bool isOn = true;
+    private bool isOn = false;
+    private AudioSource audioSource;
     private List<CookingFoodOven> foodInOven = new List<CookingFoodOven>();
     // Start is called before the first frame update
     void Start()
     {
-        
+        audioSource = GetComponent<AudioSource>();  
     }
 
     // Update is called once per frame
@@ -24,6 +25,11 @@ public class OvenOn : MonoBehaviour
 
     public void OnButtonClicked(){
         isOn = !isOn;
+        if (isOn){
+            audioSource.Play();
+        } else {
+            audioSource.Stop();
+        }
     }
 
     void OnTriggerEnter(Collider other){

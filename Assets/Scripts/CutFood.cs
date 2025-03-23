@@ -4,10 +4,11 @@ using UnityEngine;
 
 public class CutFood : MonoBehaviour
 {
+    private AudioSource audioSource;
     // Start is called before the first frame update
     void Start()
     {
-        
+        audioSource = GetComponent<AudioSource>();  
     }
 
     // Update is called once per frame
@@ -23,6 +24,11 @@ public class CutFood : MonoBehaviour
         {
             this.transform.Find("avant").gameObject.SetActive(false);
             this.transform.Find("apres").gameObject.SetActive(true);
+            PlaySound();
         }
+    }
+
+    void PlaySound(){
+        audioSource.Play();
     }
 }
