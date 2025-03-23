@@ -135,6 +135,8 @@ MonoBehaviour:
   plaque2: {fileID: 0}
   plaque3: {fileID: 0}
   fumee: {fileID: 0}
+  _isWater: 0
+  _potatoe: {fileID: 4210482054878124107, guid: 0c3de7eb8129e7548a2e7708a9461e65, type: 3}
 --- !u!54 &5869342083371037761
 Rigidbody:
   m_ObjectHideFlags: 0
