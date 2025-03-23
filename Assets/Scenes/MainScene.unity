@@ -2972,7 +2972,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec84c1990cbb62844926d45f9c9a1b4d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  food: {fileID: 6808599800806258046}
+  food: {fileID: 2199031338009922002, guid: 3ce2fcc0930366b4fb585a6d5a672734, type: 3}
 --- !u!82 &805159044
 AudioSource:
   m_ObjectHideFlags: 0
@@ -5055,7 +5055,6 @@ GameObject:
   - component: {fileID: 1472083507}
   - component: {fileID: 1472083506}
   - component: {fileID: 1472083509}
-  - component: {fileID: 1472083510}
   m_Layer: 0
   m_Name: Water
   m_TagString: Untagged
@@ -5916,7 +5915,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec84c1990cbb62844926d45f9c9a1b4d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  food: {fileID: 6808599802458675271}
+  food: {fileID: 4210482054878124107, guid: 0c3de7eb8129e7548a2e7708a9461e65, type: 3}
 --- !u!82 &1705674427
 AudioSource:
   m_ObjectHideFlags: 0
@@ -12035,16 +12034,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3ce2fcc0930366b4fb585a6d5a672734, type: 3}
---- !u!1 &6808599800806258046 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2199031338009922002, guid: 3ce2fcc0930366b4fb585a6d5a672734, type: 3}
-  m_PrefabInstance: {fileID: 4453061556591087345}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &6808599802458675271 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4210482054878124107, guid: 0c3de7eb8129e7548a2e7708a9461e65, type: 3}
-  m_PrefabInstance: {fileID: 1291043552443148047}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
