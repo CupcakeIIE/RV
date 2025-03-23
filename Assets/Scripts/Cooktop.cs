@@ -9,13 +9,14 @@ public class Cooktop : MonoBehaviour
     [SerializeField] Transform cookingPos;
     [SerializeField] Material onMaterial;
     [SerializeField] Material offMaterial;
-    public bool isOn = false;
+    public bool isOn;
 
     public bool panOnFire = false;
     public bool potOnFire = false;
 
     void Start()
     {
+        isOn = false;
         goRenderer = GetComponent<Renderer>();
         
     }
@@ -37,12 +38,12 @@ public class Cooktop : MonoBehaviour
             }
             else 
             {
+                Debug.Log("potonfire");
                 potOnFire = true;
             }
             
             
 
-            Debug.Log("yoyo");
             // Affiche un message dans la console
             other.transform.position = cookingPos.position;
             other.transform.rotation = cookingPos.rotation;

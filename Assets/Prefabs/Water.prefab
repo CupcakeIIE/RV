@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2163429216017802593}
   - component: {fileID: 5888703232014581660}
+  - component: {fileID: 6147791494988860848}
   m_Layer: 0
   m_Name: Water
   m_TagString: Untagged
@@ -51,6 +52,29 @@ MonoBehaviour:
   fumee: {fileID: 0}
   _isWater: 1
   _potatoe: {fileID: 4210482054878124107, guid: 0c3de7eb8129e7548a2e7708a9461e65, type: 3}
+--- !u!136 &6147791494988860848
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2239998079547315932}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Height: 1
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &8276483272838274654
 GameObject:
   m_ObjectHideFlags: 0

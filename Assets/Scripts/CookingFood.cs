@@ -6,16 +6,17 @@ public class CookingFood : MonoBehaviour
     private int counter = 0;
     private bool counting = false;
 
-    public GameObject plaque1;
-    public GameObject plaque2;
-    public GameObject plaque3;
+    [SerializeField] GameObject plaque1;
+    [SerializeField] GameObject plaque2;
+    [SerializeField] GameObject plaque3;
 
     public ParticleSystem fumee;
     [SerializeField] private bool _isWater;
     [SerializeField] private GameObject _potatoe;
 
 
-    private Rigidbody rb;
+
+    private Rigidbody rb = null;
 
 
     // Start is called before the first frame update
@@ -23,10 +24,17 @@ public class CookingFood : MonoBehaviour
     {
         
         // Récupère le composant Rigidbody
-        rb = GetComponent<Rigidbody>();
+        if (TryGetComponent<Rigidbody>(out Rigidbody rbTemp)) {
+            rb = rbTemp;
+        }
 
+        if (rb !=null){
+            
         // Gèle la rotation sur les axes X et Z
         rb.constraints = RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationZ;
+        }
+
+        Debug.Log("start");
         plaque1 = GameObject.Find("Plate");
         plaque2 = GameObject.Find("Plate (1)");
         plaque3 = GameObject.Find("Plate (2)");
@@ -34,7 +42,9 @@ public class CookingFood : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    {
+    {   if (_isWater){
+        counting = true;
+    }
         if ((plaque1.GetComponent<Cooktop>().panOnFire && plaque1.GetComponent<Cooktop>().isOn) || (plaque2.GetComponent<Cooktop>().panOnFire && plaque2.GetComponent<Cooktop>().isOn) || (plaque3.GetComponent<Cooktop>().panOnFire && plaque3.GetComponent<Cooktop>().isOn))
         {
             if (counting)
@@ -55,28 +65,19 @@ public class CookingFood : MonoBehaviour
                 fumee.Play();
                 fumee.transform.position = this.transform.position;
             }
-
-            if (counter >= 1000 && _isWater)
-            {
-                TryGetComponent<PotatoeInWater>(out PotatoeInWater potatoes);
-                for (int i = 0; i < potatoes.GetPotatoes(); i++)
-                {
-                    Instantiate(_potatoe);
-                }
-                Destroy(gameObject);
-            }
         }
         else if ((plaque1.GetComponent<Cooktop>().potOnFire && plaque1.GetComponent<Cooktop>().isOn) || (plaque2.GetComponent<Cooktop>().potOnFire && plaque2.GetComponent<Cooktop>().isOn) || (plaque3.GetComponent<Cooktop>().potOnFire && plaque3.GetComponent<Cooktop>().isOn))
-        {
-            
+        {   
             if (counting)
             {
+            Debug.Log("tamerelapute");
                 counter += 1;
             }
 
             if (counter >= 1000 && _isWater)
             {
-                TryGetComponent<PotatoeInWater>(out PotatoeInWater potatoes);
+                Transform cylinder = transform.Find("Cylinder");
+                cylinder.gameObject.TryGetComponent<PotatoeInWater>(out PotatoeInWater potatoes);
                 for (int i = 0; i < potatoes.GetPotatoes(); i++)
                 {
                     Instantiate(_potatoe);
@@ -86,8 +87,10 @@ public class CookingFood : MonoBehaviour
         }
         else
         {
-            fumee.Pause();
-            fumee.Clear();
+            if (fumee != null){
+                fumee.Pause();
+                fumee.Clear();
+            }
         }
     }
 
@@ -95,13 +98,15 @@ public class CookingFood : MonoBehaviour
     void OnTriggerEnter(Collider other)
     {
         // Vérifie si l'objet en collision a le tag "Pan"
-        if (other.CompareTag("pan"))
+        if (other.CompareTag("pan") || other.CompareTag("pot"))
         {
             this.transform.position = other.transform.position;
             this.transform.position = new Vector3(this.transform.position.x, this.transform.position.y + 0.05f, this.transform.position.z);
             this.transform.rotation = other.transform.rotation;
-            rb.constraints = RigidbodyConstraints.FreezeRotationX |RigidbodyConstraints.FreezeRotationY | RigidbodyConstraints.FreezeRotationZ | RigidbodyConstraints.FreezePositionX |RigidbodyConstraints.FreezePositionY | RigidbodyConstraints.FreezePositionZ;
-   
+            if (rb !=null){
+                rb.constraints = RigidbodyConstraints.FreezeRotationX |RigidbodyConstraints.FreezeRotationY | RigidbodyConstraints.FreezeRotationZ | RigidbodyConstraints.FreezePositionX |RigidbodyConstraints.FreezePositionY | RigidbodyConstraints.FreezePositionZ;
+            }
+            Debug.Log("trrrrrriiiiiigggggggggggggggggeeeeeerrrrrr");
             counting = true;
         }
     }
@@ -109,11 +114,12 @@ public class CookingFood : MonoBehaviour
     void OnTriggerExit(Collider other)
     {
         // Vérifie si l'objet en collision a le tag "Pan"
-        if (other.CompareTag("pan"))
+        if (other.CompareTag("pan") || other.CompareTag("pot"))
         {
-            
-            rb.constraints = RigidbodyConstraints.None;
-            rb.constraints = RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationZ;
+            if (rb !=null){
+                rb.constraints = RigidbodyConstraints.None;
+                rb.constraints = RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationZ; 
+            }
             counting = false;
         }
     }

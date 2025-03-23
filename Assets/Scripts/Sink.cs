@@ -17,11 +17,6 @@ public class Sink : MonoBehaviour
     public void Open()
     {
         _isOpened = !_isOpened;
-        /*if (_isOpened){
-            audioSource.Play();
-        } else {
-            audioSource.Stop();
-        }*/
         _water.SetActive(_isOpened);
     }
 }

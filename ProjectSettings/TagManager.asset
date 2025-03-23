@@ -8,6 +8,7 @@ TagManager:
   - food
   - potatoes
   - couteau
+  - pot
   layers:
   - Default
   - TransparentFX
