@@ -37,12 +37,12 @@ public class CookingFood : MonoBehaviour
                 counter += 1;
             }
 
-            if (counter >= 500)
+            /*if (counter >= 500)
             {
                 this.transform.GetComponent<Renderer>().material.color = new Color(0.64f, 0.164f, 0.164f, 1.0f);;
-            }
+            }*/
 
-            if (counter >= 1000)
+            if (counter >= 100)
             {
                 counter = 0;
                 this.transform.GetComponent<Renderer>().material.color = Color.black;
