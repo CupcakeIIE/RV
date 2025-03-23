@@ -38,6 +38,8 @@ public class CookingFood : MonoBehaviour
         plaque1 = GameObject.Find("Plate");
         plaque2 = GameObject.Find("Plate (1)");
         plaque3 = GameObject.Find("Plate (2)");
+        ParticleSystem[] particleSystems = Object.FindObjectsOfType<ParticleSystem>();
+        fumee = particleSystems[0];
     }
 
     // Update is called once per frame
