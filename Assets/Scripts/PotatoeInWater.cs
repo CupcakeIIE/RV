@@ -4,25 +4,24 @@ using UnityEngine;
 
 public class PotatoeInWater : MonoBehaviour
 {
-    private int _potatoesCooked;
-    private int _maxPotatoes = 3;
+    private bool _potatoesCooked;
     // Start is called before the first frame update
     void Start()
     {
-        _potatoesCooked = 0;
+        _potatoesCooked = false;
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.TryGetComponent(out CutFood cf) && _potatoesCooked < _maxPotatoes)
+        if(other.TryGetComponent(out CutFood cf) && !_potatoesCooked)
         {
             Destroy(cf.gameObject);
-            _potatoesCooked++;
+            _potatoesCooked = true;
         }
     }
 
-    public int GetPotatoes()
+    public void ResetPotatoes()
     {
-        return _potatoesCooked;
+        _potatoesCooked = false;
     }
 }

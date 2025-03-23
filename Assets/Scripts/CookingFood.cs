@@ -78,11 +78,11 @@ public class CookingFood : MonoBehaviour
             {
                 Transform cylinder = transform.Find("Cylinder");
                 cylinder.gameObject.TryGetComponent<PotatoeInWater>(out PotatoeInWater potatoes);
-                for (int i = 0; i < potatoes.GetPotatoes(); i++)
-                {
-                    Instantiate(_potatoe);
-                }
+                GameObject potatoe = Instantiate(_potatoe);
+                potatoe.transform.position = transform.position + Vector3.up;
                 Destroy(gameObject);
+                potatoes.ResetPotatoes();
+                Water.IsFull = false;
             }
         }
         else
