@@ -19,7 +19,7 @@ public class OvenOn : MonoBehaviour
     {
         if (isOn){
             foreach (CookingFoodOven food in foodInOven){
-                food.Cook(0f);
+                food.Cook(Time.deltaTime);
             }
         }
     }
