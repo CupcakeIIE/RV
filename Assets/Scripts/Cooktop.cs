@@ -12,6 +12,7 @@ public class Cooktop : MonoBehaviour
     public bool isOn = false;
 
     public bool panOnFire = false;
+    public bool potOnFire = false;
 
     void Start()
     {
@@ -28,9 +29,17 @@ public class Cooktop : MonoBehaviour
     void OnTriggerEnter(Collider other)
     {
         // Vérifie si l'objet en collision a le tag "Pan"
-        if (other.CompareTag("pan"))
+        if (other.CompareTag("pan") || other.CompareTag("pot"))
         {
-            panOnFire = true;
+            if (other.CompareTag("pan"))
+            {
+                panOnFire = true;
+            }
+            else 
+            {
+                potOnFire = true;
+            }
+            
             
 
             Debug.Log("yoyo");
@@ -49,10 +58,16 @@ public class Cooktop : MonoBehaviour
     void OnTriggerExit(Collider other)
     {
         // Vérifie si l'objet en collision a le tag "Pan"
-        if (other.CompareTag("pan"))
+        if (other.CompareTag("pan") || other.CompareTag("pot"))
         {
-            // Affiche un message dans la console
-            panOnFire = false;
+            if (other.CompareTag("pan"))
+            {
+                panOnFire = false;
+            }
+            else 
+            {
+                potOnFire = false;
+            }
 
             GoOnCooktop cookingScript = other.GetComponent<GoOnCooktop>();
             if (cookingScript != null)

@@ -458,6 +458,7 @@ MonoBehaviour:
   offMaterial: {fileID: 2100000, guid: 5092e123aea632541aba9005e3837b48, type: 2}
   isOn: 0
   panOnFire: 0
+  potOnFire: 0
 --- !u!65 &98731964
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2346,6 +2347,7 @@ MonoBehaviour:
   offMaterial: {fileID: 2100000, guid: 5092e123aea632541aba9005e3837b48, type: 2}
   isOn: 0
   panOnFire: 0
+  potOnFire: 0
 --- !u!65 &661026189
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4489,6 +4491,7 @@ MonoBehaviour:
   offMaterial: {fileID: 2100000, guid: 5092e123aea632541aba9005e3837b48, type: 2}
   isOn: 0
   panOnFire: 0
+  potOnFire: 0
 --- !u!65 &1173880006
 BoxCollider:
   m_ObjectHideFlags: 0

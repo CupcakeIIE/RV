@@ -66,6 +66,24 @@ public class CookingFood : MonoBehaviour
                 Destroy(gameObject);
             }
         }
+        else if ((plaque1.GetComponent<Cooktop>().potOnFire && plaque1.GetComponent<Cooktop>().isOn) || (plaque2.GetComponent<Cooktop>().potOnFire && plaque2.GetComponent<Cooktop>().isOn) || (plaque3.GetComponent<Cooktop>().potOnFire && plaque3.GetComponent<Cooktop>().isOn))
+        {
+            
+            if (counting)
+            {
+                counter += 1;
+            }
+
+            if (counter >= 1000 && _isWater)
+            {
+                TryGetComponent<PotatoeInWater>(out PotatoeInWater potatoes);
+                for (int i = 0; i < potatoes.GetPotatoes(); i++)
+                {
+                    Instantiate(_potatoe);
+                }
+                Destroy(gameObject);
+            }
+        }
         else
         {
             fumee.Pause();
